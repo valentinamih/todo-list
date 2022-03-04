@@ -1,0 +1,14 @@
+
+.header {
+    display: grid;
+    grid-area: h;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    background: #6273A1;
+    font-size: xxx-large;
+    color: white;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+}

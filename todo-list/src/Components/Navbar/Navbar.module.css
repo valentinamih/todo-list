@@ -1,0 +1,17 @@
+.navbar {
+    background-color: #E8E8F9;
+    font-size: larger;
+}
+
+.item .active {
+    color: hotpink;
+    text-decoration: none;
+
+}
+
+.item a{
+    display: block;
+    margin: 10px 5px;
+    font-size: xx-large;
+    text-decoration: none;
+}

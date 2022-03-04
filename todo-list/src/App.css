@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+.app-wrapper {
+  grid-template-areas: 'h h' 'n c';
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Hubballi', cursive;
+  color: rgba(56, 44, 134, 1)
+}
