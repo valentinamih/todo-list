@@ -6,8 +6,6 @@ import {Main} from "./Components/Main/Main";
 import ListContainer from "./Components/List/ListContainer";
 import {Redirect, Switch} from "react-router";
 
-
-
 function App () {
   return (
     <div className="app-wrapper">
@@ -27,5 +25,4 @@ function App () {
 }
 
 export let AppContainer = withRouter(App)
-
 export default App;

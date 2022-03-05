@@ -2,6 +2,8 @@
     color: #cc2e81;
 }
 .input {
+    display: grid;
+    align-self: center;
     border: none;
     padding: 10px;
     resize: none;

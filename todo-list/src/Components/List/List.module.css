@@ -19,11 +19,13 @@
 }
  .addTaskForm {
      display: grid;
-     grid-template-columns: 1fr 50px;
+     grid-template-columns: 1fr 100px 50px;
+     margin-bottom: 10px;
  }
  .icon {
      display: grid;
      justify-self: end;
+     align-self: center;
      margin-right: 10px;
      width: 25px;
      height: 25px;
@@ -56,4 +58,20 @@
  .optionsHeading {
      grid-area: h;
      margin: 5px 5px;
+ }
+ .select {
+     display: grid;
+     justify-content: space-between;
+     grid-template-areas: 'l l' 's b';
+     margin-bottom: 15px;
+ }
+ .select label {
+     grid-area: l;
+ }
+ .select button {
+     display: grid;
+     align-self: end;
+ }
+ .selectInput {
+     width: 300px;
  }

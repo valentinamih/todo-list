@@ -1,7 +1,7 @@
 import style from './Item.module.css'
 import done from '../../assets/done.png'
 import todo from '../../assets/todo.png'
-import {useState} from "react";
+import React, {useState} from "react";
 import {Field, reduxForm} from "redux-form";
 import deleteTodoPic from '../../assets/deleteTodo.png'
 import editTodo from '../../assets/editTodo.png'
@@ -21,7 +21,10 @@ export const Item  =  (props) => {
     return (
             <div className={style.item}>
             <img src={props.completed ? done : todo} onClick={() => {props.toggleComplete(props.id)}} className={style.checkbox} alt={'checkbox'}/>
-                {editMode ? <UpdateTaskReduxForm initialValues={{updateTask: props.title}} onSubmit={onSubmit} title={props.title}/> :
+                {editMode ? <UpdateTaskReduxForm initialValues={{updateTask: props.title}}
+                                                 onSubmit={onSubmit}
+                                                 title={props.title}
+                    /> :
                     <div className={style.itemTitle}>
                         <span> {props.title} </span>
                         <img src={editTodo} onClick={() => {setEditMode(true)}} alt={'editTodo'} className={style.icon}/>
