@@ -1,31 +1,39 @@
-import {useState} from "react";
 import style from './Paginator.module.css'
+import {useState} from "react";
+import nextPage from '../assets/nextPage.png'
+import prevPage from '../assets/prevPage.png'
 import classNames from "classnames";
 
 let cn = classNames.bind(style);
 
-
-export const Paginator = (props) => {
-    let pagesCount = Math.ceil(props.totalTodosCount / props.pageSize)
-    let pages = []
-    for (let i = 1; i <= pagesCount; i++) {
-        pages.push(i)
+export const Paginator = ({todosPerPage, todosCount, pagination, currentPage}) => {
+    let pagesNumber = [];
+    for (let i = 1; i <= Math.ceil(todosCount / todosPerPage); i++) {
+        pagesNumber.push(i)
     }
-    let portionSize = 10
-    let portionsCount = pagesCount / portionSize
+    let portionsCount = pagesNumber.length / todosPerPage
     let [portionNumber, setPortionNumber] = useState(1)
-    let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1
-    let rightPortionPageNumber = portionNumber * portionSize
-    return <div className={style.paginator}>
-        {portionNumber > 1 && <button onClick={() => setPortionNumber(portionNumber - 1)}> Prev </button>}
-        {pages
-            .filter(page => page >= leftPortionPageNumber && page <= rightPortionPageNumber)
-            .map(page => {
-                return <span className={cn({[style.selectedPage]: props.currentPage === page}, style.pageNumber)}
-                             key={page}
-                             onClick={(e) => props.onPageChanged(page)}>{page}</span>
-            })
-        }
-        {portionNumber < portionsCount && <button onClick={() => setPortionNumber(portionNumber - 1)}> Next </button>}
-    </div>
+    let leftPortionPageNumber = (portionNumber - 1) * todosPerPage + 1
+    let rightPortionPageNumber = portionNumber * todosPerPage
+    return <nav className={style.paginator}>
+        <div>
+            {portionNumber > 1 && <img src={prevPage}
+                                       className={style.pageArrow}
+                                       onClick={() => setPortionNumber(portionNumber - 1)} />}
+        </div>
+        <div>
+            {pagesNumber.filter(page => page >= leftPortionPageNumber && page <= rightPortionPageNumber)
+                .map((page) => <span  className={cn({[style.selectedPage]: currentPage === page}, style.paginationItem)}
+                                      onClick={() => {
+                                          pagination(page)
+                                      }}
+                                      key={page}
+                >{page}</span>)}
+        </div>
+        <div>
+            {portionNumber < portionsCount && <img src={nextPage}
+                                                   className={style.pageArrow}
+                                                   onClick={() => setPortionNumber(portionNumber + 1)} />}
+        </div>
+    </nav>
 }

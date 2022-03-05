@@ -1,12 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+
+:root {
+  --pink: hotpink;
+  --darker-pink: #ff2c91;
+  --light-purple-color: #9D3FE7;
+  --dark-purple-color: #602093;
+  --error-color: #D51A52
+}
 .app-wrapper {
   grid-template-areas: 'h h' 'n c';
   display: grid;
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   width: 65%;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   font-family: 'Hubballi', cursive;
   color: rgba(56, 44, 134, 1)
+}
+.app-wrapper-container {
+ background-color: rgba(250, 255, 0, 0.15);
+ height: 100%
+}
+button {
+    margin-top: 5px;
+    margin-left: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+    max-width: 150px;
+    background: #EA9BD7;
+    color: white;
+    font-size: medium;
 }

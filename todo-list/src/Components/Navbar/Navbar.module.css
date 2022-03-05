@@ -1,6 +1,7 @@
 .navbar {
     background-color: #E8E8F9;
     font-size: larger;
+    height: 100%;
 }
 
 .item .active {
@@ -8,7 +9,10 @@
     text-decoration: none;
 
 }
-
+a:active {
+    color: #f82a8e;
+    text-decoration: none
+}
 .item a{
     display: block;
     margin: 10px 5px;

@@ -1,0 +1,48 @@
+.item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid  burlywood;
+    border-radius: 10px;
+    width: 500px;
+    align-items: center;
+    background-color: #E8E8F9;
+}
+.checkbox {
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+.checkbox:hover {
+    filter: brightness(90%);
+}
+.checkbox:active {
+    filter: brightness(70%);
+}
+.icon {
+    max-width: 25px;
+    margin: 5px;
+    height: 25px;
+}
+.icon:hover {
+    filter: brightness(90%);
+}
+.icon:active {
+    filter: brightness(70%);
+}
+.itemTitle {
+    display: grid;
+    grid-template-columns: 5fr 40px 40px;
+    align-items: center;
+    word-break: break-word;
+}
+.itemTitle span {
+    max-width: 320px;
+}
+.updateTaskForm {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    align-items: center;
+    justify-items: start;
+}

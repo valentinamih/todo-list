@@ -1,9 +1,10 @@
+import style from './forms.module.css'
+
 export const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
     <div>
-        <label>{label}</label>
-        <div>
-            <input {...input} placeholder={label} type={type}/>
-            {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+        <div className={style.form}>
+            <input {...input} placeholder={label} type={type} className={style.input} autoFocus={true}/>
+            {touched && ((error && <span className={style.error}>{error}</span>) || (warning && <span>{warning}</span>))}
         </div>
     </div>
 )

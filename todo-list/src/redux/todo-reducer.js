@@ -26,7 +26,7 @@ export let todoReducer = (state = initialStore, action) => {
         case ADD_TODO: {
             let title = action.title
             return {...state,
-                allTodos: [ ...state.allTodos , {id: ++state.totalTodosCount, userId: 7, title:title, completed:false}],
+                allTodos: [{id: ++state.totalTodosCount, userId: 7, title:title, completed:false}, ...state.allTodos],
             totalTodosCount: ++state.totalTodosCount}
         }
         case TOGGLE_COMPLETE_SUCCESS: {
