@@ -59,9 +59,9 @@ export const List = (props) => {
         />
         <div className={style.paginationOptions}>
             <p className={style.optionsHeading}>Show per: </p>
-            <span onClick={() => setTodosPerPage(5)}>5 </span>
-            <span onClick={() => setTodosPerPage(10)}>10 </span>
-            <span onClick={() => setTodosPerPage(20)}>20</span>
+            <span className={style.options} onClick={() => setTodosPerPage(5)}>5 </span>
+            <span className={style.options} onClick={() => setTodosPerPage(10)}>10 </span>
+            <span className={style.options} onClick={() => setTodosPerPage(20)}>20</span>
         </div>
     </div>
 }

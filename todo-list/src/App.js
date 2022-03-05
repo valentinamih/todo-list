@@ -4,7 +4,7 @@ import {Header} from "./Components/Header/Header";
 import {Route,  withRouter} from 'react-router-dom'
 import {Main} from "./Components/Main/Main";
 import ListContainer from "./Components/List/ListContainer";
-import {Switch} from "react-router";
+import {Redirect, Switch} from "react-router";
 
 
 
@@ -15,6 +15,9 @@ function App () {
         <Navbar />
         <div className={'app-wrapper-container'}>
             <Switch>
+                <Route exact path="/">
+                    <Redirect to="/main"/>}
+                </Route>
                 <Route path='/main'  render={() => <Main />} />
                 <Route path='/list' render={() => <ListContainer />} />
             </Switch>
